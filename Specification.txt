@@ -13,8 +13,15 @@ longitude -> longMet
 
 Subfunction "SetZero"
 # Recalculate arrays to have lowest value 0
-latMet -> latMetZ
-longmet -> longmetZ
+latMet -> latMet
+longmet -> longmet
+
+Subfunction "Filter"
+# Some kind of digital low pass filter to remove single outliers
+
+Subfunction "FindSlopes"
+# Split arrays into one piece per slope, defined as a continous run with negative elevation change
+latMetFlt -> LatMetFlt1, LatMetFlt2 osv
 
 Subfunction "PlotRun"
 # Plot of latitue, longitude and elevation
