@@ -1,5 +1,7 @@
-
-
+Subfunction "ReadGPX"
+# Imports gpx file from Maprika and populates arrays:
+input file.gpx
+return latitude,longitude, elevation, time
 
 ### Old ###
 
