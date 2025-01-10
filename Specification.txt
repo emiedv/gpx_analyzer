@@ -23,6 +23,11 @@ Subfunction "FindSlopes"
 inout latMetFlt, longmetFlt, elevationFlt, time
 return latMetFlt1, latMetFlt2 etc.
 
+Subfunction "FindLifts"
+# Split arrays into one piece per lift, defined as a continous run with positive elevation change
+inout latMetFlt, longmetFlt, elevationFlt, time
+return latMetFlt1b, latMetFlt2b etc.
+
 Subfunction "PlotRun"
 # Plot of latitue, longitude and elevation
 
