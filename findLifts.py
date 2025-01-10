@@ -1,3 +1,3 @@
-# Split arrays into one piece per slope, defined as a continous run with negative elevation change
+# Split arrays into one piece per lift, defined as a continous run with positive elevation change
 input latMetFlt, longmetFlt, elevationFlt, time
-return latMetFlt1, latMetFlt2 etc.
+return latMetFlt1b, latMetFlt2b etc.
