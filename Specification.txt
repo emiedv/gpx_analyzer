@@ -1,0 +1,21 @@
+Subfunction "ReadGPX"
+# Imports gpx file from Maprika and populates arrays:
+
+    latitude = []
+    longitude = []
+    elevation = []
+    time = []
+
+Subfunction "ToMetric"
+# Convert latitue and longitude to meters
+latitude -> latMet
+longitude -> longMet
+
+Subfunction "SetZero"
+# Recalculate arrays to have lowest value 0
+latMet -> latMetZ
+longmet -> longmetZ
+
+Subfunction "PlotRun"
+# Plot of latitue, longitude and elevation
+
