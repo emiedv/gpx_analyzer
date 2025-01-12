@@ -1,12 +1,11 @@
-Subfunction "ReadGPX"
-# Imports gpx file from Maprika and populates arrays:
-input file.gpx
-return latitude,longitude, elevation, time
-
-### Old ###
+# Subfunction "ReadGPX"
+# # Imports gpx file from Maprika and populates arrays:
+# input file.gpx
+# return latitude,longitude, elevation, time
 
 import xml.etree.ElementTree as ET
 from datetime import datetime
+
 
 def read_gpx(filename):
     tree = ET.parse(filename)
@@ -16,15 +15,15 @@ def read_gpx(filename):
     ns = {'gpx': 'http://www.topografix.com/GPX/1/1'}
 
     # Initialize lists to store data
-    latitude = []
     longitude = []
+    latitude = []
     elevation = []
     time = []
 
     # Iterate through each track point
     for trkpt in root.findall('.//gpx:trkpt', ns):
-        lat = float(trkpt.attrib['lat'])
         lon = float(trkpt.attrib['lon'])
+        lat = float(trkpt.attrib['lat'])
         ele = float(trkpt.find('gpx:ele', ns).text)
         elev = float("{:.2f}".format(ele)) # round elevation to 2 decimal places
         time_str = trkpt.find('gpx:time', ns).text
@@ -32,11 +31,8 @@ def read_gpx(filename):
         # time.append(datetime.strptime(time_actual.isoformat(), "%Y-%m-%dT%H:%M:%S.%f"))
         # time.append(dt.dt.fromisoformat.total_seconds(time_str[:-1]))
 
-        latitude.append(lat)
         longitude.append(lon)
+        latitude.append(lat)
         elevation.append(elev)
 
-    return latitude, longitude, elevation, time
-
-# Init, ändra .gpx-fil till indata
-latitude, longitude, elevation, time = read_gpx('Hafjell.gpx')
+    return longitude, latitude , elevation, time
